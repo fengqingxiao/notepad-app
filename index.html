@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记事本APP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-notebook"></i> 记事本APP</h1>
+            <p>创建、编辑和管理你的笔记</p>
+        </header>
+
+        <div class="app-container">
+            <!-- 左侧：笔记列表 -->
+            <div class="notes-list">
+                <h2><i class="fas fa-list"></i> 笔记列表</h2>
+                <input type="text" id="searchBox" class="search-box" placeholder="搜索笔记...">
+                <div id="notesContainer" class="notes-container">
+                    <!-- 笔记列表将动态加载 -->
+                </div>
+                
+                <!-- 笔记统计 -->
+                <div class="notes-statistics">
+                    <h3><i class="fas fa-chart-bar"></i> 统计</h3>
+                    <div class="stat-item">
+                        <span>总笔记数</span>
+                        <span class="stat-value" id="totalNotes">0</span>
+                    </div>
+                    <div id="categoryStats"></div>
+                </div>
+            </div>
+
+            <!-- 右侧：编辑区域 -->
+            <div class="note-editor">
+                <h2><i class="fas fa-edit"></i> 笔记编辑器</h2>
+                <div id="statusMessage" class="status-message"></div>
+                
+                <!-- 笔记类别 -->
+                <div class="category-tags" id="categoryTags"></div>
+                
+                <input type="text" id="noteTitle" class="title-input" placeholder="笔记标题...">
+                <textarea id="noteContent" class="content-area" placeholder="笔记内容..."></textarea>
+                
+                <div class="button-container">
+                    <button id="newNote" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> 新建笔记
+                    </button>
+                    <button id="saveNote" class="btn btn-primary">
+                        <i class="fas fa-save"></i> 保存笔记
+                    </button>
+                    <button id="deleteNote" class="btn btn-danger disabled" disabled>
+                        <i class="fas fa-trash"></i> 删除笔记
+                    </button>
+                    <button id="exportNotes" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> 导出笔记
+                    </button>
+                </div>
+                
+                <!-- 快捷键提示 -->
+                <div style="margin-top: 20px; font-size: 14px; color: #666;">
+                    <i class="fas fa-keyboard"></i> 快捷键：
+                    <span style="background-color: #f0f0f0; padding: 2px 5px;">Ctrl+N</span> 新建笔记，
+                    <span style="background-color: #f0f0f0; padding: 2px 5px;">Ctrl+S</span> 保存笔记
+                </div>
+            </div>
+        </div>
+        
+        <!-- 功能介绍 -->
+        <div class="notes-list" style="margin-top: 20px;">
+            <h2><i class="fas fa-info-circle"></i> 功能介绍</h2>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><i class="fas fa-check-circle"></i> 使用本地存储保存笔记</li>
+                <li><i class="fas fa-check-circle"></i> 笔记分类（工作、学习、生活、备忘、灵感）</li>
+                <li><i class="fas fa-check-circle"></i> 实时搜索功能</li>
+                <li><i class="fas fa-check-circle"></i> 笔记统计信息</li>
+                <li><i class="fas fa-check-circle"></i> 快捷键支持（Ctrl+N新建，Ctrl+S保存）</li>
+                <li><i class="fas fa-check-circle"></i> 导出笔记为JSON文件</li>
+                <li><i class="fas fa-check-circle"></i> 完全离线使用</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

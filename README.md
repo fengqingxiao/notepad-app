@@ -21,13 +21,15 @@
 
 ## 快速开始
 
-### 运行方式
+### 在线访问
+应用已部署到 GitHub Pages，可以直接访问：
+- https://fengqingxiao.github.io/notepad-app/
 
+### 运行方式
 1. 克隆项目
 2. 使用浏览器打开 `index.html` 即可使用
 
 ### 本地运行
-
 ```bash
 git clone https://github.com/fengqingxiao/notepad-app
 cd notepad-app
